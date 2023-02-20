@@ -1,13 +1,245 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap");
+
+:root {
+  --text-color: white;
+  --yellow: rgb(255, 196, 0);
+  --main-background: black;
+  --search-field: #17171a;
+  --notes-card: #1a1c1e;
+  --shady-text: rgb(129, 128, 128);
+  --shady-text-2: rgb(182, 182, 182);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--main-background);
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  padding: 0px 20px;
+}
+
+.wrapp {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+.wrapp-logo {
+  display: flex;
+  align-items: center;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo {
+  font-size: 2.2rem;
+  padding-left: 20px;
+}
+
+.toggle-holder {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-icon {
+  height: 48px;
+  background-color: var(--search-field);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  width: 50px;
+  border: none;
+}
+#icons {
+  display: flex;
+  justify-content: center;
+}
+
+#search {
+  width: 88%;
+  height: 48px;
+  background-color: var(--search-field);
+  border: none;
+  border-radius: 3rem;
+  font-size: 16px;
+  padding: 20px;
+  display: block;
+  margin-right: 5px;
+  animation: fadeIn 1s;
+}
+
+#search:focus {
+  outline: none;
+}
+
+.search-icon {
+  height: 48px;
+  background-color: var(--search-field);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  width: 50px;
+  border: none;
+}
+
+#notes-icon {
+  display: block;
+  margin-top: 10px;
+  width: 27px;
+  height: 27px;
+  background-color: var(--yellow);
+  border-radius: 4px;
+}
+
+#line {
+  display: block;
+  height: 15px;
+  width: 3px;
+  margin-left: 16px;
+  background-color: var(--main-background);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+main {
+  padding-top: 10px;
+}
+
+.notes-card {
+  background-color: var(--notes-card);
+  margin: 0px 20px 25px 20px;
+  border-radius: 1.5rem;
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.notes-card-title {
+  margin-top: 0;
+  text-decoration: none;
+  margin: 5px 0 7px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.notes-card-body {
+  font-size: 16px;
+  margin-bottom: 9px;
+  color: var(--shady-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time-o-creation {
+  display: block;
+  margin: 5px 0 5px 0;
+  color: var(--shady-text);
+  font-size: 13px;
+}
+
+#add-Btn {
+  background-color: var(--yellow);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 50px;
+  right: 40px;
+}
+
+.create_note_header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.back-btn {
+  font-size: 2rem;
+  width: 70px;
+  text-align: center;
+}
+
+.save {
+  width: 80px;
+  height: 45px;
+  background-color: var(--notes-card);
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.delete {
+  width: 60px;
+  height: 45px;
+  background-color: rgb(217, 66, 66);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-note_form {
+  padding: 0px 25px;
+}
+
+.create-note_form-title {
+  display: block;
+  background-color: var(--main-background);
+  border: none;
+  font-size: 30px;
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: visible;
+  word-break: break-all;
+}
+
+.create-note_form-title:focus {
+  outline: none;
+}
+.create-note_form-textarea:focus {
+  outline: none;
+}
+
+.create-note_form-textarea {
+  border: none;
+  color: var(--shady-text-2);
+  resize: none;
+  max-width: 100%;
+  min-width: 100%;
+  background-color: var(--main-background);
+  font-size: 18px;
 }
